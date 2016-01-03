@@ -1,0 +1,101 @@
+Errata
+https://www.packtpub.com/books/content/support/11712
+
+ - 7 submitted: last submission 03 Sep 2015 
+
+
+
+
+Errata Type: Code Page No: 12
+
+The code:
+ _AmbientColor ("Ambient Color", Range(0,10)) = 2
+ should be
+ _AmbientColor ("Ambient Color", Color) = (1,1,1,1)
+
+
+
+Errata Type: Code Page No: 23
+
+The code:
+ float difLight = dot(0, dot(s.Normal, lightDir));
+ should be
+ float difLight = max(0, dot (s.Normal, lightDir));
+
+
+
+Errata Type: Typo Page No: 62
+
+The line:
+
+In this recipe, we will be covering how to implement the per vertex version of the and also see 
+how to implement the per pixel version using some new parameters in the surface Shader's 
+Input struct.
+
+Should be:
+
+In this recipe, we will be covering how to implement the per vertex version of the Phong Specular type and also see how to implement the per pixel version using some new parameters in the surface Shader's Input struct.
+
+
+
+Errata Type: Typo | Page No: 4
+
+It is:
+
+Untiy3D
+
+Should be:
+
+Unity3D
+
+
+
+Errata Type: Code Pg no.: 35,36
+
+It is:
+
+Precentage, singe in figure
+
+Should be:
+
+Percentage and single
+
+
+
+Errata Type: Code Pg no: 76
+
+It is:
+
+float geoEnum = 2.0 * NdotH; 
+float3 G1 = (geoEnum * NdotV) / NdotH; 
+float3 G2 = (geoEnum * NdotL) / NdotH; 
+float3 G = min(1.0, min(G1, G2));
+
+should be:
+
+float geoEnum = 2.0 * NdotH; 
+float G1 = (geoEnum * NdotV) / NdotH; 
+float G2 = (geoEnum * NdotL) / NdotH; 
+float G = min(1.0, min(G1, G2));
+
+On page: 77
+
+It is:
+
+float3 spec = float3(fresnel * G * roughness * roughness) * s.Specular;
+
+should be:
+
+float spec = float(fresnel * G * roughness * roughness) * s.Specular;
+
+
+
+On page 23   |    Errata type: Code
+
+It is:
+
+float3 ramp = tex2D(_RampTex, float2(hLambert)).rgb;
+
+should be:
+
+float3 ramp = tex2D(_RampTex, (float2)hLambert).rgb;
